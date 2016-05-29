@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+function source_if_exists {
+  local source_file="$1"; shift
+
+  if [[ -f "$source_file" ]]; then
+    source "$source_file"
+  fi
+}
+
+source_if_exists /usr/local/bin/virtualenvwrapper.sh
+source_if_exists "$HOME/.gvm/scripts/gvm"
